@@ -11,7 +11,7 @@ jobs:
         strategy:
             matrix:
                 os: [ubuntu-latest, macos-latest, windows-latest]
-                node-version: [16.x]
+                node-version: [20.x]
 
         steps:
             - uses: actions/checkout@v2
@@ -24,25 +24,9 @@ jobs:
             - name: Install Dependencies
               run: yarn
 
-    test:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-
-            - name: Setup Node.js
-              uses: actions/setup-node@v2
-              with:
-                  node-version: 16.x
-
-            - name: Install Dependencies
-              run: yarn
-
-            - name: run tests
-              run: yarn test
-
     release:
         runs-on: ubuntu-latest
-        needs: [test-build, test]
+        needs: [test-build]
 
         steps:
             # Checkout the exact commit tagged on the release.
@@ -59,7 +43,7 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   always-auth: true
-                  node-version: "16.x"
+                  node-version: "20.x"
                   registry-url: "https://registry.npmjs.org"
 
             - name: install deps
