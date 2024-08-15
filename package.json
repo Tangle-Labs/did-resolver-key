@@ -1,7 +1,7 @@
 {
   "name": "@tanglelabs/resolver-did-key",
   "description": "Fork of Sphereon did:key resolver with BBS+/BLS and EBSI support.",
-  "version": "0.24.2",
+  "version": "0.24.3",
   "source": "src/index.ts",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

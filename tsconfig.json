@@ -8,13 +8,10 @@
         "strictPropertyInitialization": false,
         "esModuleInterop": true,
         "types": [],
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "declaration": true
     },
-    "include": ["src/*"],
-    "exclude": [
-        "node_modules",
-        "./node_modules",
-        "./node_modules/*",
-        "./node_modules/@types/node/index.d.ts"
-    ]
+    "include": ["src/*"]
 }
